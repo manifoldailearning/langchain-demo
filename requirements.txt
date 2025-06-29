@@ -4,3 +4,6 @@ langchain-community
 langchain-text-splitters
 langchain-postgres
 python-dotenv
+beautifulsoup4
+requests
+pypdf
