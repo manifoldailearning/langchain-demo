@@ -7,3 +7,5 @@ python-dotenv
 beautifulsoup4
 requests
 pypdf
+psycopg
+psycopg[binary]

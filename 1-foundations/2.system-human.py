@@ -12,6 +12,6 @@ system_message = SystemMessage(
 
 human_message = HumanMessage(
     "What is the capital of India?")
-
+#
 response = model.invoke([system_message, human_message])
 print(response.content)
