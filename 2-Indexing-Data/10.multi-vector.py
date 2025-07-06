@@ -80,6 +80,8 @@ store.mset(list(zip(doc_ids, chunks))) # Add full chunks to the Docstore
 summary_docs = [
     Document(page_content=summary, metadata={"document_id": doc_ids[i]}) for i, summary in enumerate(summaries)]
 
+print("Summary Documents:")
+print(summary_docs)
 # Create a MultiVectorRetriever to handle both the original chunks and the summaries
 # index the summary in the vector store
 retriever = MultiVectorRetriever(
@@ -92,14 +94,14 @@ retriever.vectorstore.add_documents(summary_docs)
 
 # vector store retrieves the summaries
 sub_docs = retriever.vectorstore.similarity_search(
-    "Professional skill Summary", k=2)
+    "Arjun Varma's experience in Generative AI", k=2)
 
 print("sub docs: ", sub_docs[0].page_content)
 
 print("length of sub docs:\n", len(sub_docs[0].page_content))
 
 # Whereas the retriever will return the larger source document chunks:
-retrieved_docs = retriever.invoke("Professional skill summary")
+retrieved_docs = retriever.invoke("Arjun Varma's experience in Generative AI")
 
 print("length of retrieved docs: ", len(retrieved_docs))
 print("retrieved docs: ", retrieved_docs)
