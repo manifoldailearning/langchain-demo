@@ -11,4 +11,10 @@ docker run \
 
 postgresql+psycopg://langchain:langchain@localhost:6024/langchain
 
+
 ```
+
+# Modes of Indexing
+- `None` does not automatically cleanup, user has to do the manual cleaning of old content
+- `Incremental` mode - deletes the previous version of the content if the content of the source document or derived document has changed
+- `Full` - will additionally delete any documents not included in the documents currently being indexed.

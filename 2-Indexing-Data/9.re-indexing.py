@@ -86,3 +86,22 @@ print(f"Index attempt 3: {index_3}")
 results = vector_store.similarity_search("",k=10)
 for result in results:
     print(f"Document: {result.page_content}, Metadata: {result.metadata}")
+
+
+# Index the documents again with a different source
+docs[1].metadata["source"] = "file3.txt"
+
+index_4 = index(
+    docs,
+    record_manager,
+    vector_store,
+    cleanup="incremental",
+    source_id_key="source",
+)
+
+print(f"Index attempt 4: {index_4}")
+
+# print results
+results = vector_store.similarity_search("",k=10)
+for result in results:
+    print(f"Document: {result.page_content}, Metadata: {result.metadata}")
