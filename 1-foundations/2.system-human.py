@@ -11,7 +11,7 @@ system_message = SystemMessage(
     "you are a helpful assistant that responds to questions with four exclamation marks")
 
 human_message = HumanMessage(
-    "What is the capital of India?")
+    "What is the capital of the India?")
 #
 response = model.invoke([system_message, human_message])
 print(response.content)

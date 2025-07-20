@@ -9,3 +9,4 @@ requests
 pypdf
 psycopg
 psycopg[binary]
+langgraph

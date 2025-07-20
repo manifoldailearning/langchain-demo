@@ -11,8 +11,8 @@ print("Batch Resposes")
 # batch requests
 
 batch_responses = model.batch([
-    "Ramesh in our class has won cricket match",
-    "who won the cricket match",])
+    "Ramesh in our class has won cricket match yesterday",
+    "who won the cricket match which ramesh was playing yesterday",])
 
 print("\nBatch Responses:")    
 for i, response in enumerate(batch_responses):

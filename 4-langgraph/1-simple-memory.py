@@ -18,5 +18,7 @@ response = chain.invoke({
                  ("ai","That's great news! Congratulations to Ramesh on winning the cricket match. It must have been an exciting game!"),
                  ("human", "Who won cricket match yesterday where Ramesh was playing?")]
 })
-
+# invoke - single input
+# batch - multiple inputs
+# stream - streaming output
 print(response.content)
