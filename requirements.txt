@@ -10,3 +10,5 @@ pypdf
 psycopg
 psycopg[binary]
 langgraph
+ddgs
+wikipedia
