@@ -1,4 +1,4 @@
--- (a) Enable required extensions
+```-- (a) Enable required extensions
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 CREATE EXTENSION IF NOT EXISTS vector;
 
@@ -33,3 +33,4 @@ RETURNS TABLE (
    WHERE (filter = '{}' OR metadata @> filter)
    ORDER BY embedding <-> query_embedding;
 $$ LANGUAGE sql STABLE;
+```
