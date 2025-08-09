@@ -12,3 +12,5 @@ psycopg[binary]
 langgraph
 ddgs
 wikipedia
+numexpr
+supabase
