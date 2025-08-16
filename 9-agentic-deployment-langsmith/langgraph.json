@@ -1,0 +1,11 @@
+{
+    "dependencies": [
+        "langchain_openai",
+        "retrieval_graph.py",
+        "vector_store.py"
+    ],
+    "graphs": {
+        "retrieval_graph": "retrieval_graph:graph"
+    },
+    "env": "./.env"
+}

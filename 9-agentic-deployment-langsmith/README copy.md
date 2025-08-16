@@ -34,3 +34,36 @@ RETURNS TABLE (
    ORDER BY embedding <-> query_embedding;
 $$ LANGUAGE sql STABLE;
 ```
+
+```
+conda create --prefix ./my_env python=3.11 -y
+conda activate ./my_env
+
+OPENAI_API_KEY="<key-here>" in .env file
+```
+
+```
+curl http://127.0.0.1:2024/assistants/search \
+  --request POST \
+  --header 'Content-Type: application/json' \
+  --data '{
+  "metadata": {},
+  "graph_id": "retrieval_graph",
+  "limit": 10,
+  "offset": 0,
+  "sort_by": "assistant_id",
+  "sort_order": "asc"
+}'
+
+```
+curl -X POST http://127.0.0.1:2024/runs/stream \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "assistant_id": "571ade52-f5cd-582a-89d9-d79dc861a8ba",
+    "input": { "messages": [ { "role": "user", "content": "What is Agentic AI?" } ] },
+    "config": { "configurable": { "k": 4 } },
+    "multitask_strategy": "reject",
+    "stream_mode": ["values"]
+  }'
+
+```

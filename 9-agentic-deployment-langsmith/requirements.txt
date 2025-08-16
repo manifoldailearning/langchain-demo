@@ -1,0 +1,5 @@
+langchain-openai
+langchain-community
+supabase
+langgraph
+langgraph-cli[inmem]

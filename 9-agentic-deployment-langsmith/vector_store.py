@@ -10,7 +10,7 @@ load_dotenv()
 # ── Environment ────────────────────────────────────────────────────────────────
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-INDEX_NAME = "documents"
+TABLE_NAME = "documents"
 
 # ── Clients & Models ──────────────────────────────────────────────────────────
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -27,7 +27,7 @@ def add_documents(texts: list[str]):
         documents=docs,
         embedding=embeddings,
         client=supabase,
-        table_name=INDEX_NAME,
+        table_name=TABLE_NAME,
         query_name="match_documents",  # Adjust if your RPC is named differently
     )
 
@@ -36,7 +36,7 @@ def get_vector_store() -> SupabaseVectorStore:
     return SupabaseVectorStore(
         client=supabase,
         embedding=embeddings,
-        table_name=INDEX_NAME,
+        table_name=TABLE_NAME,
         query_name="match_documents",
     )
 
