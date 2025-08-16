@@ -56,6 +56,8 @@ curl http://127.0.0.1:2024/assistants/search \
 }'
 
 ```
+
+```
 curl -X POST http://127.0.0.1:2024/runs/stream \
   -H 'Content-Type: application/json' \
   -d '{
@@ -66,4 +68,14 @@ curl -X POST http://127.0.0.1:2024/runs/stream \
     "stream_mode": ["values"]
   }'
 
+```
+
+```
+OPENAI_API_KEY=<api-key>
+SUPABASE_URL=<url>
+SUPABASE_SERVICE_ROLE_KEY=<>
+LANGCHAIN_TRACING_V2=true
+LANGSMITH_API_KEY=<langchain-api-key>
+LANGCHAIN_API_KEY=<langchain-api-key>
+LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
 ```
